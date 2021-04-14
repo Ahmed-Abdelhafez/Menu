@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const resturantData = require('./resturantsData')
-const Resturnat = require('../models/resturant')
+const restaurantData = require('./restaurantsData')
+const Restaurnat = require('../models/restaurant')
 
 mongoose.connect('mongodb://localhost:27017/Menu',{
     useNewUrlParser: true,
@@ -14,12 +14,22 @@ mongoose.connection.once('open', () => {
 })
 
 const seedDB = async() => {
-    await Resturnat.deleteMany({})
+    await Restaurnat.deleteMany({})
     for(let i=0; i < 50; i++){
-        const res = new Resturnat({
-            name: `${resturantData[i].name}`,
-            phone: `${resturantData[i].phone}`,
-            location: `${resturantData[i].location}, ${resturantData[i].city}`
+        const res = new Restaurnat({
+            name: `${restaurantData[i].name}`,
+            phone: `${restaurantData[i].phone}`,
+            street: `${restaurantData[i].location}`, 
+            city: `${restaurantData[i].city}`,
+            country: `${restaurantData[i].country}`,
+            image: 'https://source.unsplash.com/collection/64076587',
+            workingHours: `${restaurantData[i].workingHours}`,
+            rating: `${restaurantData[i].rating}`,
+            cuisines: `${restaurantData[i].cuisines}`,
+            payment: `${restaurantData[i].payment}`,
+            preOrder: `${restaurantData[i].preOrder}`,
+            prepTime: `${restaurantData[i].preptime}`,
+            serviceCharge: `${restaurantData[i].serviceCharge}`
         })
         await res.save()
     }

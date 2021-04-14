@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate') %>
+    <div style="background-color: #f8f9fa;">
+    <h3 class="mb-4 p-1 pl-3">All Restaurants</h3>
+    </div>
+    <div class="input-group rounded justify-content-end pb-2">
+        <div class="  col-10 col-md-11 col-lg-3">
+        <input type="search" class="form-control border-right-0" placeholder="Search Restaurant" aria-label="Search"
+            aria-describedby="search-addon" />
+        </div>
+        <span class="input-group-text bg-white border-left-0" id="search-addon">
+            <i class="fas fa-search"></i>
+        </span>
+    </div>
+    <ul>
+        <div class="row">
+        <% for(let restaurant of restaurants) {%>
+        <div class="col-xl-2 col-md-3 col-6 p-2" style="height: 240px;">
+            <a href="restaurants/<%= restaurant._id %>"  class="custom-card">
+                <div class="card ">
+                <img src="<%= restaurant.image %>" class="card-img-top m-auto my-3" alt="...">
+                    <hr class="m-0">
+                <div class="card-body text-center">
+                  <h5 class="card-title"><%= restaurant.name %></h5>
+                  <p class="card-text text-muted">Some quick</p>
+                </div>
+              </div>
+            </a>
+        </div>    
+            <% } %>
+        </div>
+    </ul>

@@ -10,10 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-icons": "^1.4.1",
+    "cloudinary": "^1.25.1",
     "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.3",
-    "mongoose-type-phone": "^1.0.1"
+    "mongoose-type-phone": "^1.0.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "open": "^8.0.5"
   }
 }

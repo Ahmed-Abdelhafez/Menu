@@ -1,0 +1,18 @@
+<% layout('layouts/boilerplate') %>
+
+    <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="restaurant[name]" value="<%= restaurant.name %> " >
+    </div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="restaurant[phone]" value="<%= restaurant.phone %> " >
+    </div>
+    <div>
+        <label for="location">Location</label>
+        <input type="text" id="location" name="restaurant[location]" value="<%= restaurant.location %> " >
+    </div>
+        <button>Update Restaurant</button>
+    </form>
+    <a href="/restaurants/<%= restaurant._id %> ">Back to Restaurants</a>

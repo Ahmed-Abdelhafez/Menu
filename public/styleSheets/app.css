@@ -1,0 +1,33 @@
+body {
+    font-family: DMSans,sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+.card-img-top {
+    width: 100px;
+    height: 100px;
+}
+
+.img-fluid {
+    width: 150px;
+    height: 150px;
+}
+
+
+
+.form-control:focus {
+    border: 1px solid rgb(209, 209, 209); 
+    box-shadow: none;
+  }
+
+.custom-card,
+.custom-card :hover{
+    text-decoration: none;
+    color: black;
+}
+
