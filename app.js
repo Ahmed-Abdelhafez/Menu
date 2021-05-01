@@ -53,6 +53,8 @@ app.get('/restaurants/:id', async(req, res) => {
     res.render('restaurants/show', { restaurant })
 })
 
+app.post('')
+
 app.listen(3000, () => {
     console.log("server is running on port 3000")
 })

@@ -6,8 +6,10 @@
                 <img src="<%= restaurant.image %>" alt="" class="img-fluid m-auto">
             </div>
             <div class="  col-md-10 col-9">
-                <h5 class="card-body p-0 m-0">
-                    <%= restaurant.name %>
+                <h5 class="card-body p-0 m-0 fw-bold">
+                    <strong>
+                        <%= restaurant.name %>
+                    </strong>
                 </h5>
                 <p class="card-text p-sm-0"><small class="text-muted">
                         in <%= restaurant.city %>, <%= restaurant.country %>
@@ -20,27 +22,139 @@
         </div>
     </div>
 
-
-
-    <!-- <div class="btn-group d-grid gap-2 col-md-9 col-12 mx-auto" role="group" aria-label="Basic radio toggle button group">
-    <input type="button" class="btn-check border-0" name="btn" id="menubtn" autocomplete="off" checked>
-    <label class="btn " for="menu">Menu</label>
-  
-    <input type="button" class="btn-check border-0" name="btn" id="reviewsbtn" autocomplete="off">
-    <label class="btn " for="reviews">Reviews</label>
-  
-    <input type="button" class="btn-check border-0" name="btn" id="infobtn" autocomplete="off">
-    <label class="btn" for="info">Info</label>
-  </div> -->
     <div class="btn-group d-grid gap-2 col-md-9 col-12 mx-auto" role="group" aria-label="Basic example">
-        <button type="button" id="menu" class="btn" aria-checked="true"
-            onclick='document.getElementById("content").innerHTML="<%- include("../partials/restaurantMenu")%>"'>Menu</button>
-        <button type="button" id="reviews" class="btn"
-            onclick='document.getElementById("content").innerHTML="<%- include("../partials/restaurantReviews")%>"'>Reviews</button>
-        <button type="button" id="info" class="btn"
-            onclick='document.getElementById("content").innerHTML="<%- include("../partials/restaurantInfo")%>"'>Info</button>
+        <button type="button" id="menuBtn" class="btn" aria-checked="true"><strong>Menu</strong></button>
+        <button type="button" id="reviewsBtn" class="btn"><strong>Reviews</strong></button>
+        <button type="button" id="infoBtn" class="btn"><strong>Info</strong></button>
     </div>
 
-    <div class="card" id="content">
-        <%- include('../partials/restaurantMenu')%>
+    <hr class="mt-0">
+
+    <div class="card border-0" id="content">
+    </div>
+
+    <div id="menu" hidden>
+        <div class="row">
+            <div class="col-lg-8 ">
+                <div class="row">
+                    <div class="col-md-3 col-lg-4" id="categories">
+                        <ul class="list-group shadow">
+                            <li class="list-group-item pt-2 fw-bold"><strong>Categories</strong></li>
+                            <li class="list-group-item text-muted"><small>for sharing</small></li>
+                            <li class="list-group-item text-muted"><small>for one</small></li>
+                            <li class="list-group-item text-muted"><small>dessert</small></li>
+                            <li class="list-group-item text-muted border-bottom pb-3"><small>drinks</small></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9 col-lg-8 col-12">
+                        <div class="row px-lg-1 px-2">
+                            <button class="btn btn-lg col-12 d-flex justify-content-between btnMenu" type="button">
+                                <span class="">bbbbb</span>
+                                <span class="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+                                    </svg>
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                                  </svg> -->
+                                </span>
+                            </button>
+                        </div>
+                        <div class="row px-lg-1 p-2">
+                            <div class="col-1 card border-0 p-1">
+                                <div class=" menuImage d-flex justify-content-center">
+                                    <img src="<%= restaurant.image %>" alt="" class="img-thumbnail">
+                                </div>
+                            </div>
+                                <div class="ml-lg-4 ml-sm-3 ml-4 col-7">
+                                    <h5 class="card-body p-0 m-0 fw-bold">
+                                        <strong>
+                                            <%= restaurant.name %>
+                                        </strong>
+                                    </h5>
+                                    <p class="card-text p-sm-0"><small class="text-muted">
+                                            12 pcs of chicken, large fries, 2 rizo, large coleslaw salad, 5 buns and
+                                            soft drink liter.
+                                        </small></p>
+                                </div>
+                                    <div class="col-2">
+                                    <p class="p-0 m-0" ><small>EGP 188.00</small></p>
+                                    <p class="p-0 m-0"><small></small></p>
+                                    </div>
+                                    <p class="mb-md-2 m-0">Min. order: EGP 0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reviews" hidden>
+        <h1>reviews</h1>
+    </div>
+
+    <div id="info" hidden>
+        <div class="row">
+            <div class="col-8">
+                <h4>
+                    <%= restaurant.name %> - Governorates
+                </h4>
+                <hr>
+                <div class="row">
+                    <p class="col-5  m-0"><small>Minimum Order Amount</small></p>
+                    <p class="col-7 m-0"><small>EGP 0.00</small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Working Hours</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.workingHours %>
+                        </small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Delivery Time</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.prepTime %> mins
+                        </small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Delivery Fee</small></p>
+                    <p class="col-7 m-0"><small>EGP 0.00</small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Pre Order</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.preOrder %>
+                        </small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Payment</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.payment %>
+                        </small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Rating</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.rating %>
+                        </small></p>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-5 m-0"><small>Cuisines</small></p>
+                    <p class="col-7 m-0"><small>
+                            <%= restaurant.cuisines %>
+                        </small></p>
+                </div>
+            </div>
+        </div>
     </div>
